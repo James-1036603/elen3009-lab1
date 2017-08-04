@@ -22,6 +22,25 @@ Screen::Screen(string::size_type height, string::size_type width, char bkground)
 										// all positions initialized with
 										// character value of bkground
 { /* all the work is done with the member initialization list */ }
+//4.3
+void Screen::move(Direction dir){//moving the cursor around with keywords. This is a useful feature, as it allows us to link certain keywords to keys and only call apon one method and may prove to be a necessity
+        if(dir==Direction::FORWARD){
+                Screen::forward();
+        } else if(dir==Direction::BACK){
+                Screen::back();
+        } else if(dir==Direction::UP){
+                Screen::up();
+        } else if(dir==Direction::DOWN){
+                Screen::down();
+        } else if(dir==Direction::HOME){
+                Screen::home();
+        } else if(dir==Direction::END){
+                Screen::end();
+        }
+}
+
+
+
 
 void Screen::move(Direction dir){//moving the cursor around with keywords. This is a useful feature, as it allows us to link certain keywords to keys and only call apon one method and may prove to be a necessity
         if(dir==Direction::FORWARD){
