@@ -14,6 +14,7 @@ using namespace std;
 
 class Screen {
 public:
+	//4.3
 	// Screen's constructor
 	Screen( string::size_type height = 8, string::size_type width = 40, char bkground = '#');
 
