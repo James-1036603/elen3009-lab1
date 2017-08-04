@@ -39,28 +39,6 @@ void Screen::move(Direction dir){//moving the cursor around with keywords. This 
         }
 }
 
-
-
-
-void Screen::move(Direction dir){//moving the cursor around with keywords. This is a useful feature, as it allows us to link certain keywords to keys and only call apon one method and may prove to be a necessity
-        if(dir==Direction::FORWARD){
-                Screen::forward();
-        } else if(dir==Direction::BACK){
-                Screen::back();
-        } else if(dir==Direction::UP){
-                Screen::up();
-        } else if(dir==Direction::DOWN){
-                Screen::down();
-        } else if(dir==Direction::HOME){
-                Screen::home();
-        } else if(dir==Direction::END){
-                Screen::end();
-        }
-}
-
-
-
-
 void Screen::forward()
 {   // advance _cursor one screen element
 	++_cursor;
@@ -84,25 +62,31 @@ void Screen::back()
 
 void Screen::up()
 {   // move _cursor up one row of screen
-	// do not wrap around
-	if ( row() == 1 ) // at top?
-		cerr << "Screen::up - Cannot wrap around in a vertical direction" << endl;
-	else
-		_cursor -= _width;
+        // do not wrap around
+        if ( row() == 1 ){ // at top?
+                //cerr << "Screen::up - Cannot wrap around in a vertical direction" << endl;
+                Screen::move(_height,_cursor+1);
+}
+        else
+                _cursor -= _width;
 
-	return;
+        return;
 }
 
 void Screen::down()
 {   // move _cursor down one row of screen
-	// do not wrap around
-	if ( row() == _height ) // at bottom?
-		cerr << "Screen::down - Cannot wrap around in a vertical direction" << endl;
-	else
-		_cursor += _width;
+        // do not wrap around
+        if ( row() == _height ){ // at bottom?
+                //cerr << "Screen::down - Cannot wrap around in a vertical direction" << endl;
+       
+                Screen::move(_height-_height+1,_cursor-(_height*_width)+_width+1);
+        }
+        else
+                _cursor += _width;
 
-	return;
+        return;
 }
+
 
 void Screen::move( string::size_type row, string::size_type col )
 {   // move _cursor to absolute position
