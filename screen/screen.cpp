@@ -54,7 +54,7 @@ void Screen::drawSquare(string::size_type x, string::size_type y, string::size_t
                         }
                 }
         }
-}
+} //In general, it is better not to implement a function like this directly in the screen class. The screen class should exist on its own which represents a screen, and drawing a square should be an external modifier
 
 
 void Screen::forward()

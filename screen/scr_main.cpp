@@ -22,3 +22,5 @@ int main()
 	return 0;
 }
 
+//4.6- Changes such as an external library which can implement a GUI could be used. Such libraries already incorporate methods for easier representation instead of a string being used. The internal methods need not be changed, as the library will not act as a screen class, merely as a way to represent data on a graphical interface.
+ 
