@@ -17,7 +17,7 @@ int main()
     cout << "The answer is: " << answer << endl;
     cout << "Or in a more familiar form: " << answer.real() << " + " << answer.imag() << "j" << endl;
 
-    // answer++;
+    // answer++ This will not work, as complex is not of type int, and likely has no operator defined for incrementation. For this to work, we would have to define this operator to increment the value of the complex type
 
     return 0;
 }
