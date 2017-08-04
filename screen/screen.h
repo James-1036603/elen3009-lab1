@@ -58,10 +58,11 @@ public:
 	bool checkRange(string::size_type row, string::size_type col) const;
 
 	enum class Direction{FORWARD,BACK,UP,DOWN,HOME,END};//enum for directional types
-	
+	//Move function with enum as parameter
 	void move(Direction dir);
-
 	
+	//Ex 4.5
+        void drawSquare(string::size_type x, string::size_type y, string::size_type l);	
 
 private:
 	// private member functions

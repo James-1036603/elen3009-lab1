@@ -39,6 +39,24 @@ void Screen::move(Direction dir){//moving the cursor around with keywords. This 
         }
 }
 
+//ex 4.5 Draw Square- Making assumption that the square must fit inside the screen, and not go over.
+void Screen::drawSquare(string::size_type x, string::size_type y, string::size_type l){
+         if( _width < (x+l-1) ){ //check width starting coordinate plus range does not exceed screen
+                cerr<<"Out of bounds width.\n";
+        }if( _height < (y+l-1)){//check height out of bounds
+                cerr<<"Out of bounds height. \n";
+        } else{
+                Screen::move(y,x);
+                for(int j = x; j<(x+l); j++){//Write character to row
+                        for(int i = y; i < (y+l);i++){//Write character to collumn
+                                Screen::move(i,j);
+                                Screen::set(' ');
+                        }
+                }
+        }
+}
+
+
 void Screen::forward()
 {   // advance _cursor one screen element
 	++_cursor;
