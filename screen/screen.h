@@ -56,6 +56,12 @@ public:
 	// check whether the specified co-ordinates lie within the screen
 	bool checkRange(string::size_type row, string::size_type col) const;
 
+	enum class Direction{FORWARD,BACK,UP,DOWN,HOME,END};//enum for directional types
+	
+	void move(Direction dir);
+
+	
+
 private:
 	// private member functions
 	string::size_type remainingSpace() const;
