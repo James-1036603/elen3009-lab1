@@ -1,5 +1,15 @@
 #include "screen.h"
 
+/*
+const is used:
+1. passing as a parameter in '.set' to ensure that the passed variable is not changed within the method
+2. after a method, to ensure that no variables of the object are not changed within the method/function
+3. as a constant variable, so that the variable cannot be changed outside the functions
+
+*/
+
+
+
 // 0 represents the top-left screen element
 const string::size_type TOP_LEFT = 0;
 
