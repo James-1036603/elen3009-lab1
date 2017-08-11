@@ -1,4 +1,5 @@
 // complex.cpp
+
 // Multiplying complex numbers
 
 #include <iostream>
@@ -6,7 +7,7 @@
 
 using namespace std;
 
-typedef complex<float> complx;//3.2- defnining complex<float> as complx (complex causes errors)
+typedef complex<float> complx;//3.2- defnining complex<float> as complx (naming it 'complex' causes errors)
 
 int main()
 {
